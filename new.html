@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Web Page</title>
+    <style>
+        @font-face {
+            font-family: 'OffBit';
+            src: url('offbit/OffBit-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'OffBit';
+            src: url('offbit/OffBit-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        :root {
+            --green-color: #228B22;
+            --row-border-color: #cccccc
+        }
+
+        /* ===== CSS Section ===== */
+        body {
+            margin: 0 auto;
+            /* mantiene centrado horizontalmente */
+            max-width: 750px;
+            padding: 0 0.8rem;
+            /* margen interno a los lados */
+            background: #f4f4f9;
+            font-family: Arial, sans-serif;
+            color: #333;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        a {
+            color: #4a90e2;
+            /* color del link */
+            text-decoration: none;
+            /* quita subrayado */
+        }
+
+
+        .container-header {
+            text-align: left;
+        }
+
+        .container-main {}
+
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 720px;
+            background: #ffffff00;
+            border-top: 1px solid #00000092;
+            z-index: 1000;
+
+            padding: 15px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #000;
+        }
+
+        #toggle-main {
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .content-header-title {
+            font-size: 2.05rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        a.title-link {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .content-header-subtitle {
+            font-size: 1.2rem;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            gap: 0.5rem;
+
+            padding: 1rem 0;
+            /* espacio extra arriba y abajo */
+        }
+
+        @media (max-width: 600px) {
+            .socials {
+                flex-wrap: wrap;
+                /* permite que los links salten de línea */
+                justify-content: center;
+                /* opcional, asegura que queden centrados */
+            }
+        }
+
+        .socials-email {
+            color: gray;
+        }
+
+        .socials-link {
+            color: #4a90e2;
+            cursor: pointer;
+            transition: transform 0.1s ease, color 0.3s ease;
+            display: inline-block;
+            /* necesario para transform */
+            transform-origin: right center;
+            /* el “eje” está en el borde izquierdo */
+        }
+
+
+        .socials-link:hover {
+            color: #000000;
+            transform: rotate(3deg);
+            text-decoration: underline;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .content-status {
+            display: flex;
+            align-items: center;
+            /* centra verticalmente texto y círculo */
+            gap: 0.2rem;
+            /* espacio entre texto y LED */
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .status-indicator {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #4caf50;
+            transition: opacity 0.8s ease-in-out;
+            /* más suave */
+            opacity: 1;
+
+            position: relative;
+            /* visible por defecto */
+            top: -3px;
+        }
+
+        .content-status-text {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .highlighted-word {
+            font-family: 'OffBit', sans-serif;
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border: 1px solid var(--green-color);
+            font-weight: bold;
+            background-color: #f4f4f9;
+            color: var(--green-color);
+            font-size: 0.5rem;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .responsive-table {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .table-row {
+            display: flex;
+            width: 100%;
+            border-bottom: 2px solid var(--row-border-color);
+            /* borde entre filas */
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-cell {
+            flex: 1 1 0;
+            padding: 0.5rem 0rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: flex;
+            align-items: center;
+            /* centra verticalmente */
+        }
+
+        /* Columna 1 - estilo destacado */
+        .col1 {
+            flex: 0.75 1 0;
+            /* ancho relativo 1 */
+            color: #555;
+            font-size: 0.8rem;
+        }
+
+        .col1-word {
+            font-family: 'OffBit', sans-serif;
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border: 1px solid var(--green-color);
+            font-weight: bold;
+            background-color: #f4f4f9;
+            color: var(--green-color);
+            font-size: 0.5rem;
+        }
+
+        /* Columna 2 - texto normal */
+        .col2 {
+            flex: 8.5 1 0;
+            /* ancho relativo 8 → ocupa ~80% */
+            color: #555;
+            font-size: 0.8rem;
+        }
+
+        /* Columna 3 - otro estilo */
+        .col3 {
+            flex: 1 1 0;
+            /* ancho relativo 1 */
+            font-weight: bold;
+            color: #000;
+            font-size: 0.8rem;
+            text-align: right;
+        }
+
+        @media (max-width: 600px) {
+            .col1.hide-on-mobile {
+                display: none;
+            }
+
+            /* Que las demás columnas ocupen todo el espacio disponible */
+            .table-row .col2 {
+                flex: 1 1 auto;
+            }
+
+            .table-row .col3 {
+                flex: 0 0 auto;
+                /* si quieres que mantenga tamaño proporcional al texto */
+            }
+        }
+
+        .game-title {}
+
+        .game-title:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        /* UTILITIES */
+        .spacer {
+            height: 1.2rem;
+        }
+
+        .socials .tooltip-text {
+            position: fixed;
+            /* Igual que los otros tooltips */
+            background-color: #49824fbe;
+            /* Color oficial de Discord */
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            pointer-events: none;
+            /* No bloquea el hover */
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 1000;
+            white-space: nowrap;
+            /* Para que no se corte el texto */
+        }
+
+        .tooltip-game {
+            position: fixed;
+            background-color: #49824fbe;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 1000;
+            white-space: nowrap;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <!-- ===== HTML Section ===== -->
+
+    <div class="container-header">
+
+        <div class="content-header-title">
+            <a href="#" id="link-main1" class="title-link">Sergi</a>
+        </div>
+
+        <!-- Subtítulo -->
+        <div class="content-header-subtitle">
+            Sound Design and Audio Integration
+        </div>
+
+        <div class="spacer" style="height: 1.8rem;"></div>
+
+        <!-- <div class="socials">
+            <span class="social-email">quietsergi@gmail</span> |
+            <a href="https://www.lunheimstudios.com/" target="_blank" class="socials-link">
+                Bluesky
+                <span class="tooltip-text">Open Bluesky</span>
+            </a>
+            |
+            <a href="https://www.lunheimstudios.com/" target="_blank" class="socials-link">
+                Twitter
+                <span class="tooltip-text">Open Twitter</span>
+            </a>
+            |
+            <a href="https://www.lunheimstudios.com/" target="_blank" class="socials-link">
+                Instagram
+                <span class="tooltip-text">Open Instagram</span>
+            </a>
+        </div> -->
+
+        <div class="socials">
+            <span class="social-email">quietsergi@gmail</span> |
+            <a href="https://www.lunheimstudios.com/" target="_blank" class="socials-link">
+                Bluesky
+            </a>
+            |
+            <a href="https://www.lunheimstudios.com/" target="_blank" class="socials-link">
+                Twitter
+            </a>
+            |
+            <a href="https://www.lunheimstudios.com/" target="_blank" class="socials-link">
+                Instagram
+            </a>
+        </div>
+
+
+    </div>
+
+    <div class="container-main">
+
+        <div class="content-status">
+            STATUS
+            <span class="status-indicator"></span>
+        </div>
+
+        <div class="content-status-text">
+            I'm currently <span class="highlighted-word">AVAILABLE</span> to take on new illustration projects. – Get in
+            touch
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="responsive-table">
+        <div class="table-row">
+            <div class="table-cell col1 hide-on-mobile"><span class="col1-word">Bob</span></div>
+            <div class="table-cell col2">
+                <a href="#" class="game-title">
+                    Tiny Aquarium
+                    <span class="tooltip-game">Open Bluesky</span>
+                </a>
+            </div>
+            <div class="table-cell col3">Available</div>
+        </div>
+
+        <div class="table-row">
+            <div class="table-cell col1 hide-on-mobile"><span class="col1-word">Bobladed</span></div>
+            <div class="table-cell col2">
+                <a href="#" class="game-title">
+                    Tiny Aquarium
+                    <span class="tooltip-game">Open Bluesky</span>
+                </a>
+            </div>
+            <div class="table-cell col3">Busy</div>
+        </div>
+
+        <div class="table-row">
+            <div class="table-cell col1 hide-on-mobile"><span class="col1-word">Bob</span></div>
+            <div class="table-cell col2">
+                <a href="#" class="game-title">
+                    Tiny Aquarium
+                    <span class="tooltip-game">Open Bluesky</span>
+                </a>
+            </div>
+            <div class="table-cell col3">Offline</div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <button id="toggle-legal">Legal</button>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ===== JavaScript Section ===== -->
+
+
+    <script>
+        const toggleButton = document.getElementById("toggle-legal");
+        const mainContainer = document.getElementById("main-container");
+
+        toggleButton.addEventListener("click", () => {
+            if (mainContainer.style.display === "none") {
+                mainContainer.style.display = "block";
+                toggleButton.textContent = "Hide Main";
+            } else {
+                mainContainer.style.display = "none";
+                toggleButton.textContent = "Show Main";
+            }
+        });
+    </script>
+
+
+    <script>
+        // Para socials
+        const colSocials = document.querySelectorAll('.socials-link');
+        colSocials.forEach(cell => {
+            const tooltip = cell.querySelector('.tooltip-text');
+            cell.addEventListener('mousemove', e => {
+                tooltip.style.left = e.clientX + 10 + 'px';
+                tooltip.style.top = e.clientY + 10 + 'px';
+                tooltip.style.opacity = 1;
+            });
+            cell.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = 0;
+            });
+        });
+
+
+        // Para títulos de juegos
+        const colGames = document.querySelectorAll('.game-title');
+        colGames.forEach(cell => {
+            const tooltip = cell.querySelector('.tooltip-game');
+            cell.addEventListener('mousemove', e => {
+                tooltip.style.left = e.clientX + 10 + 'px';
+                tooltip.style.top = e.clientY + 10 + 'px';
+                tooltip.style.opacity = 1;
+            });
+            cell.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = 0;
+            });
+        });
+
+        // Para experiment games
+        const colExperimentGames = document.querySelectorAll('.col-experimentgame');
+        colExperimentGames.forEach(cell => {
+            const tooltip = cell.querySelector('.tooltip2-text');
+            cell.addEventListener('mousemove', e => {
+                tooltip.style.left = e.clientX + 10 + 'px';
+                tooltip.style.top = e.clientY + 10 + 'px';
+                tooltip.style.opacity = 1;
+            });
+            cell.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = 0;
+            });
+        });
+
+        // 🔹 Para el icono de Discord
+        const discordIcons = document.querySelectorAll('.discord-icon');
+        discordIcons.forEach(icon => {
+            const tooltip = icon.querySelector('.tooltip-discord');
+            icon.addEventListener('mousemove', e => {
+                tooltip.style.left = e.clientX + 10 + 'px';
+                tooltip.style.top = e.clientY + 10 + 'px';
+                tooltip.style.opacity = 1;
+            });
+            icon.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = 0;
+            });
+        });
+    </script>
+
+
+
+    <script>
+        const indicator = document.querySelector('.status-indicator');
+
+        setInterval(() => {
+            // alterna entre visible e invisible
+            if (indicator.style.opacity === "0") {
+                indicator.style.opacity = "1";
+            } else {
+                indicator.style.opacity = "0";
+            }
+        }, 1000); // cada 1 segundo
+
+    </script>
+
+</body>
+
+</html>
