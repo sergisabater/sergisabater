@@ -4,121 +4,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sergi.studio / home</title>
-
-    <meta name="description" content="Sergi Sabater - Videogames Sound Specialist." />
-
-    <!-- Fuentes y iconos -->
-    <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-    <head>
-        <!-- Font Awesome CDN -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-        <link rel="icon" href="me.jpg" type="image/x-icon">
-    </head>
-
-
-
-
-
-
-
-
-
-
-
+    <title>My First Web Page</title>
     <style>
-        * {
-            box-sizing: border-box;
+        @font-face {
+            font-family: 'OffBit';
+            src: url('offbit/OffBit-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
         }
 
-        /* Container of all visible in screen */
+        @font-face {
+            font-family: 'OffBit';
+            src: url('offbit/OffBit-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        :root {
+            --green-color: #228B22;
+            --row-border-color: #cccccc;
+            --background-color: white;
+        }
+
+        /* ===== CSS Section ===== */
         body {
-            font-family: 'Ibarra Real Nova', serif;
-            height: 100%;
-            margin: 0 auto;
-            /* Esto centra horizontalmente */
-            margin-top: 3rem;
-            max-width: 1170px;
-        }
+            margin: 2rem auto;
+            /* mantiene centrado horizontalmente */
+            max-width: 750px;
+            padding: 0 0.8rem;
+            /* margen interno a los lados */
+            background: var(--background-color);
+            font-family: Arial, sans-serif;
+            color: #333;
 
-        header {
-            /* display: flex; */
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /* Sub Selectors (groups for what is tagged basically) */
-        /* Containers */
-        .main-container {
             display: flex;
-            width: 100%;
-            /* max-width: 1170px; */
-            margin: 0 auto;
-            /* centra horizontalmente */
-            padding: 0 0rem;
-            /* espacio mínimo en los lados para móviles */
             flex-direction: column;
-            min-height: 90vh;
-            /* toma al menos el alto de la ventana */
-            justify-content: center;
-            /* centra verticalmente si hay espacio */
-            text-align: center;
-            /* opcional, para centrar el texto */
-            overflow: auto;
-            /* scroll si el contenido no cabe */
+            /* justify-content: center; */
+            height: 100vh;
         }
 
-        .content-header-header {
-            text-align: center;
+        main {
+            padding: 2rem;
         }
+
+        a {
+            color: #4a90e2;
+            /* color del link */
+            text-decoration: none;
+            /* quita subrayado */
+        }
+
+
+        .container-header {
+            text-align: left;
+        }
+
+        .container-main {}
+
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 750px;
+            background: var(--background-color);
+            border-top: 1px solid #ccc;
+            z-index: 1000;
+
+            padding: 0px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #000;
+        }
+
+        #toggle-legal {
+            color: #5f5f5f96;
+            /* color del texto */
+            background-color: #00000000;
+            border: none;
+            /* quita el borde por defecto */
+            padding: 10px 25px;
+            /* espacio dentro del botón */
+            font-size: 0.8rem;
+            /* tamaño de fuente */
+            font-weight: bold;
+            /* texto en negrita */
+            cursor: pointer;
+            /* cursor cambia al pasar por encima */
+            transition: transform 0.1s ease, color 0.3s ease;
+            font-size: 1rem;
+            line-height: 1.5;
+            font-weight: 500;
+            font-variant: small-caps;
+        }
+
+        #toggle-legal:hover {
+            text-decoration: underline;
+            cursor: pointer;
+            color: #5f5f5f;
+            position: relative;
+            top: -2px;
+        }
+
+
+        #main-container,
+        #legal-container {
+            /* padding: 20px; */
+            /* border: 0.4px solid #ccc; */
+            margin-top: 10px;
+            padding-bottom: 10rem;
+        }
+
+        #main-container {}
+
+        #legal-container {
+            display: none;
+            /* Oculto al cargar */
+        }
+
+        h1 {
+            font-family: Arial, sans-serif;
+            /* tipo de letra */
+            font-size: 1.1rem;
+            /* tamaño del texto */
+            font-weight: bold;
+            color: #333;
+            /* color del texto */
+            line-height: 1.5;
+            /* espacio entre líneas */
+            margin-bottom: 1rem;
+            /* espacio debajo del párrafo */
+        }
+
+        h3 {
+            font-family: Arial, sans-serif;
+            /* tipo de letra */
+            font-size: 0.9rem;
+            /* tamaño del texto */
+            font-weight: bold;
+            color: #333;
+            /* color del texto */
+            line-height: 1.5;
+            /* espacio entre líneas */
+            margin-bottom: 1rem;
+            /* espacio debajo del párrafo */
+        }
+
+        p {
+            font-family: Arial, sans-serif;
+            /* tipo de letra */
+            font-size: 0.8rem;
+            /* tamaño del texto */
+            color: #333;
+            /* color del texto */
+            line-height: 1.5;
+            /* espacio entre líneas */
+            margin-bottom: 1rem;
+            /* espacio debajo del párrafo */
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         .header-img {
             width: 150px;
@@ -129,8 +193,10 @@
             /* esquinas redondeadas (opcional) */
             opacity: 1;
             /* más transparente */
-            border: 0.05rem solid #000000;
+            border: 0.05rem solid #333;
         }
+
+
 
         .header-img img {
             width: 100%;
@@ -147,31 +213,14 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         .content-header-title {
-            text-align: center;
-            font-size: 2.05rem;
-            font-weight: 600;
+            font-weight: bold;
+            font-size: 0.8rem;
             margin-bottom: 0.5rem;
+            color: #333;
+            transition: transform 0.1s ease, color 0.3s ease;
         }
+
 
         a.title-link {
             color: inherit;
@@ -179,34 +228,408 @@
         }
 
         .content-header-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            color: #3333339c;
+        }
+
+        .content-header-title:hover,
+        .content-header-subtitle:hover {
+            position: relative;
+            top: -2px;
         }
 
 
-        .social-icons {
-            /* Pone los iconos en fila */
-            /* Espacio entre ellos */
-            justify-content: center;
-            /* Centra horizontalmente */
-            width: 100%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .socials {
             display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            gap: 0.5rem;
+
+            padding: 1rem 0;
+            /* espacio extra arriba y abajo */
+
+            color: #5f5f5f;
+            /* font-weight: bold; */
+            font-size: 0.8rem;
         }
 
-        i {
-            font-size: 0.9rem;
-            margin: 0 10px;
+        @media (max-width: 600px) {
+            .socials {
+                flex-wrap: wrap;
+                /* permite que los links salten de línea */
+                justify-content: center;
+                /* opcional, asegura que queden centrados */
+            }
+        }
+
+        .socials-email {}
+
+        .socials-link {
+            color: var(--green-color);
+            cursor: url('icons/external-icon.png'), auto;
+            /* transition: transform 0.1s ease, color 0.1s ease; */
+            display: inline-block;
+            /* necesario para transform */
+            transform-origin: right center;
+            /* el “eje” está en el borde izquierdo */
+
+            transition: color 0.3s ease;
+        }
+
+
+        .socials-link:hover {
+            color: #228b22b1;
+            /* transform: rotate(3deg); */
+            text-decoration: underline;
+            text-underline-offset: 1px;
+
+            position: relative;
+            top: -2px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .content-status {
+            display: flex;
+            align-items: center;
+            /* centra verticalmente texto y círculo */
+            gap: 0.2rem;
+            /* espacio entre texto y LED */
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .status-indicator {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #4caf50;
+            transition: opacity 0.8s ease-in-out;
+            /* más suave */
+            opacity: 1;
+
+            position: relative;
+            /* visible por defecto */
+            top: -3px;
+        }
+
+        .content-status-text {
+            font-size: 1rem;
+            line-height: 1.5;
             color: #333;
-            transition: font-size 0.3s;
-            transition: color 0.1s;
         }
 
-        i:hover {
-            color: #49824F;
-            /* font-size: 1.1rem; */
+        .highlighted-word {
+            font-family: 'OffBit', sans-serif;
+            display: inline;
+            /* padding: 0.2rem 0.5rem; */
+            padding: 5px 5px 5px 5px;
+            border: 1px solid var(--green-color);
+            font-weight: bold;
+            background-color: #f4f4f900;
+            color: var(--green-color);
+            font-size: 0.5rem;
+
+            line-height: 0.75rem;
+            vertical-align: middle;
+            text-align: center;
+            width: max-content;
         }
 
-        .discord-icon .tooltip-discord {
+
+
+
+
+
+
+
+
+
+
+
+
+        .content-credits {
+            display: flex;
+            align-items: center;
+            /* centra verticalmente texto y círculo */
+            gap: 0.2rem;
+            /* espacio entre texto y LED */
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-bottom: 3px;
+        }
+
+
+
+
+        .responsive-table {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .table-row {
+            display: flex;
+            width: 100%;
+            border-bottom: 1px solid var(--row-border-color);
+            /* borde entre filas */
+
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-cell {
+            flex: 1 1 0;
+            padding: 0.3rem 0rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: flex;
+            align-items: center;
+            /* centra verticalmente */
+        }
+
+        /* Columna 1 - estilo destacado */
+        .col1 {
+            flex: 1 1 0;
+            /* ancho relativo 1 */
+            color: #555;
+            font-size: 0.8rem;
+        }
+
+        .col1-word {
+            font-family: 'OffBit', sans-serif;
+            padding: 2px 5px 0px 5px;
+            border-radius: 2px;
+            font-weight: bold;
+            background-color: var(--green-color);
+            color: #f4f4f9;
+            font-size: 0.5rem;
+            line-height: 0.75rem;
+            /* igual al font-size */
+            vertical-align: middle;
+            /* fuerza centrado vertical dentro de la línea */
+            text-align: center;
+            width: max-content;
+            letter-spacing: .06rem;
+            text-transform: uppercase;
+            vertical-align: middle;
+            display: inline;
+        }
+
+        /* Columna 2 - texto normal */
+        .col2 {
+            flex: 8.5 1 0;
+            /* ancho relativo 8 → ocupa ~80% */
+            color: var(--green-color);
+            font-size: 1rem;
+            font-variant: small-caps;
+        }
+
+        /* Columna 3 - otro estilo */
+        .col3 {
+            /* font-family: 'OffBit', sans-serif; */
+            flex: 1 1 0;
+            /* ancho relativo 1 */
+            color: #5f5f5f;
+            font-size: 0.8rem;
+            text-align: end;
+            display: block;
+
+        }
+
+        @media (max-width: 600px) {
+            .col1.hide-on-mobile {
+                display: none;
+            }
+
+            /* Que las demás columnas ocupen todo el espacio disponible */
+            .table-row .col2 {
+                flex: 1 1 auto;
+            }
+
+            .table-row .col3 {
+                flex: 0 0 auto;
+                /* si quieres que mantenga tamaño proporcional al texto */
+            }
+        }
+
+        .game-title {
+            color: #5f5f5f;
+            font-size: 1.12rem;
+            transition: transform 0.1s ease, color 0.3s ease;
+        }
+
+
+        .game-title:hover {
+            text-decoration: underline;
+            /* cursor: pointer; */
+            cursor: url('icons/external-icon.png'), auto;
+            color: #5f5f5f96;
+            position: relative;
+            top: -2px;
+        }
+
+        #special-title {
+            /* background-color: #f9d4701f; */
+            color: #5f5f5f96;
+        }
+
+        #special-title:hover {
+            text-decoration: none;
+        }
+
+        #canceled-title {
+            /* background-color: #f9d4701f; */
+            color: #b222223d;
+            text-decoration: line-through;
+            text-decoration-thickness: 1px;
+        }
+
+        #canceled-title:hover {
+            /* background-color: #f9d4701f; */
+            color: #B22222;
+            text-decoration: line-through;
+            text-decoration-thickness: 1px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .content-demo {
+            display: flex;
+            align-items: center;
+            /* centra verticalmente texto y círculo */
+            gap: 0.2rem;
+            /* espacio entre texto y LED */
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+        }
+
+        .demoreels {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            grid-template-columns: repeat(auto-fill, 150px);
+            /* ancho fijo */
+            gap: 4px;
+            padding: 0;
+            align-items: flex-end;
+        }
+
+        .demoreel-item {
+            width: 88px;
+            height: 35px;
+            overflow: hidden;
+            border: 1px solid var(--row-border-color);
+            box-sizing: border-box;
+            /* hace que el borde no aumente el tamaño del contenedor */
+        }
+
+        .demoreel-item.reel {
+            width: 118px;
+            height: 65px;
+            /* padding: 3px; */
+            /* border: 1px solid var(--row-border-color) */
+        }
+
+
+        .demoreel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* recorta y mantiene proporción */
+            object-position: center;
+            /* centra la imagen */
+            display: block;
+        }
+
+        .demoreel-item:hover {
+            cursor: url('icons/external-icon.png'), auto;
+            position: relative;
+            top: -2px;
+            opacity: 0.7;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* UTILITIES */
+        .spacer {
+            height: 1.2rem;
+        }
+
+        .spacer-line {
+            width: 100%;
+            /* ocupa todo el ancho */
+            border-bottom: 1px solid #ccc;
+            /* línea gris */
+            margin: 1rem 0;
+            /* espacio arriba y abajo */
+        }
+
+        .socials .tooltip-text {
             position: fixed;
             /* Igual que los otros tooltips */
             background-color: #49824fbe;
@@ -224,1278 +647,864 @@
             /* Para que no se corte el texto */
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        .content-header-welcome {
-            text-align: justify;
-            text-align-last: center;
-            line-height: 1.5rem;
-            font-size: 1.15rem;
-            margin-right: 2rem;
-            margin-left: 2rem;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        .content-header-credits {
-            text-align: center;
-        }
-
-        .content-header-commentary {
-            text-align: center;
-            font-style: italic;
-            font-size: 0.8rem;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        .project {
-            width: 100%;
-            /* Ocupa todo el ancho del contenedor */
-            max-width: 600px;
-            /* Limita el ancho máximo para que no se vea enorme en pantallas grandes */
-            margin: 0 auto 10px auto;
-            /* Centra el bloque en la pantalla */
-            text-align: center;
-            /* Alinea el contenido a la derecha dentro del bloque */
-            padding-left: 0%;
-            /* Empuja el contenido desde la izquierda */
-            box-sizing: border-box;
-            /* Asegura que el padding no rompa el ancho total */
-        }
-
-
-
-
-
-        .date {
-            font-weight: 600;
-            font-size: 0.9rem;
-            /* negrita, puedes ajustar 400, 500, etc. */
-        }
-
-        .game-title {
-            color: #49824F;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 700;
-            position: relative;
-            /* Necesario para el pseudo-elemento */
-            cursor: pointer;
-        }
-
-        /* Pseudo-elemento que hará el subrayado animado */
-        .game-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            /* top: 1px; */
-            bottom: 0.1rem;
-            height: 0.01rem;
-            /* Grosor del subrayado */
-            width: 0;
-            /* Comienza desde 0 */
-            max-width: 100%;
-            background-color: #49824F;
-            /* Color del subrayado */
-            transition: width 0.5s ease;
-            /* Duración de la animación */
-        }
-
-        .game-title:hover {
-            color: #49824f;
-            background-color: #a49c2963;
-        }
-
-        /* Al hacer hover, expandir el subrayado */
-        .game-title:hover::after {
-            width: 100%;
-        }
-
-        /* Tooltip base */
-        .game-title .tooltip-text {
+        .tooltip-title {
             position: fixed;
-            /* Fijo en la pantalla */
-            background-color: #49824fbe;
-            color: white;
-            padding: 4px 16px;
+            background-color: #ffffffcc;
+            color: black;
+            padding: 4px 12px;
             border-radius: 4px;
             font-size: 0.75rem;
             pointer-events: none;
-            /* Para que no interfiera con el hover */
             opacity: 0;
-            transition: opacity 0.05s;
+            transition: opacity 0.2s;
             z-index: 1000;
-        }
-
-        .role {
-            font-style: italic;
-            color: #555;
-            font-size: 0.9rem;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        .project-content {
-            display: none;
-            /* Oculto al inicio */
-            margin-left: 20px;
-            margin-bottom: 0px;
-        }
-
-        .project-content.grupo2 {
-            margin-bottom: 0px;
-        }
-
-        .toggle-button {
-            font-weight: 500;
-            margin-bottom: 10px;
-            border: none;
-            background: none;
-            font-family: inherit;
-            color: inherit;
-            font-size: 0.9rem;
-            position: relative;
-            cursor: pointer;
-            text-decoration: none;
-            color: #000000;
-            font-style: italic;
-        }
-
-
-        .toggle-button:hover {
-            color: #49824F;
-        }
-
-
-        .underline {
-            color: #00000071;
-            text-decoration: underline;
-            text-decoration-thickness: 0.01rem;
-            text-underline-offset: 3px;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            max-width: 1170px;
-            padding: 15px 0;
-            font-size: 0.9rem;
-            color: #000;
-            z-index: 1000;
-            background-color: #fff;
-
-            display: flex;
-            /* ¡Importante! */
-            flex-direction: column;
-            /* apila texto e iconos verticalmente */
-            justify-content: center;
-            /* centra verticalmente dentro del footer */
-            align-items: center;
-            /* centra horizontalmente los hijos */
-            gap: 10px;
-            /* espacio entre texto y iconos */
-            border-top: 1px solid #00000092;
-        }
-
-        .footer-left {
-            /* margin-right: 1rem; */
-            /* espacio desde el centro hacia la izquierda */
-            position: relative;
-            color: inherit;
-            text-decoration: none;
-            /* quitar subrayado por defecto */
-            cursor: pointer;
-        }
-
-        /* Línea de subrayado suave */
-        .footer-left::after {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 0.01rem;
-            /* grosor del underline */
-            left: 0;
-            bottom: 0;
-            background-color: #49824F;
-            /* color al hacer hover */
-            transition: width 0.3s ease;
-            /* transición suave */
-        }
-
-        /* Hover */
-        .footer-left:hover::after {
-            width: 100%;
-            /* la línea crece hasta cubrir el texto */
-        }
-
-        .footer-left:hover {
-            color: #49824F;
-        }
-
-        .footer-right {
-            margin-left: 1rem;
-            /* espacio desde el centro hacia la derecha */
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        #lightbox {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        #lightbox-bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        #lightbox-content {
-            position: relative;
-            max-width: 80%;
-            width: 800px;
-            aspect-ratio: 16/9;
-            z-index: 10;
-        }
-
-        #vimeo-video {
-            width: 100%;
-            height: 100%;
-            border: 1px solid #ffffff31;
-            border-radius: 10px;
-        }
-
-        #lightbox-close {
-            position: absolute;
-            top: -50px;
-            right: 0;
-            background: #ffffff00;
-            color: #333;
-            border: none;
-            font-size: 1rem;
-            cursor: pointer;
-            padding: 10px 15px;
-            border-radius: 50%;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /* Utilities */
-        .spacer {
-            height: 1.2rem;
-            /* espacio vertical */
-        }
-
-        .spacer-line {
-            height: 0.18rem;
-            /* espacio entre líneas y contenido */
-            border-top: 1px solid #00000092;
-            /* primera línea */
-
-            /* segunda línea */
-            margin: 2rem 0;
-            width: 100%;
-            /* opcional: espacio extra arriba y abajo */
-        }
-
-
-        #legal-return {
-            font-family: 'Ibarra Real Nova', serif;
-            /* o cualquier fuente que quieras */
-            font-weight: 500;
-            /* opcional: negrita */
-            font-size: 1rem;
-            /* opcional: tamaño */
-            color: #000000;
-            /* opcional: color */
-            border-width: 1px;
-        }
-
-        #legal-return:hover {
-            background-color: #376638;
-            color: #ffffff;
-            border-width: 1px;
-            /* color al hacer hover */
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /* En pantallas pequeñas */
-        @media (max-width: 600px) {
-            .game-title {
-                text-decoration: underline !important;
-            }
-
-            #legal-return {
-                margin-bottom: 2rem;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        h1,
-        h2,
-        h3 {
-            margin: 0;
+            white-space: nowrap;
             font-weight: 400;
-            color: #000;
+            line-height: 1rem;
         }
 
-        h2 {
-            font-size: 1.1rem;
+        .tooltip-social {
+            position: fixed;
+            background-color: #ffffffcc;
+            color: black;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 1000;
+            white-space: nowrap;
+            font-weight: 400;
+            line-height: 1rem;
         }
 
-        h3 {
-            font-weight: 900;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
+        .tooltip-discord {
+            position: fixed;
+            background-color: #ffffffcc;
+            color: black;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 1000;
+            white-space: nowrap;
+            font-weight: 400;
+            line-height: 1rem;
         }
 
-        p {
-            margin-top: 0;
-            font-size: 1rem;
-            color: #000;
+        .tooltip-game {
+            position: fixed;
+            background-color: #ffffffcc;
+            color: black;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 1000;
+            white-space: nowrap;
+            font-variant: normal;
+            line-height: 1rem;
+        }
+
+        .tooltip-video {
+            position: fixed;
+            background-color: #ffffffcc;
+            color: black;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 1000;
+            white-space: nowrap;
+            font-variant: normal;
+            line-height: 1rem;
         }
     </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- BODY------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
-
-
-
-
-
-
 <body>
-    <div class="main-container">
-        <header>
-            <div class="content-header-header">
+    <!-- ===== HTML Section ===== -->
 
-                <!-- Imagen arriba -->
-                <div class="header-img">
-                    <img src="me.jpg" alt="Imagen Sergi">
-                </div>
+    <div class="container-header">
 
 
+        <div class="header-img">
+            <img src="me.jpg" alt="Img">
+            <!-- <img src="me2.gif"> -->
+            <span class="tooltip-title">
+                recording some delicious sounds!
+            </span>
+        </div>
+
+        <div class="content-header-title">
+            <a href="#" id="link-main1" class="title-link">
+                SERGI
+                <span class="tooltip-title">
+                    Hey, good to see you here. I'm Sergi
+                    <br>
+                    — I design sounds and implement audio systems for games.
+                    <br>
+                    This page is a portfolio of some things I've done.
+                    <br>
+                    <br>
+                    Want to get in touch? Ask anything? Just chat? You can always email or DM me.
+                </span>
+            </a>
+        </div>
+
+        <!-- Subtítulo -->
+        <div class="content-header-subtitle">
+            <a href="#" id="link-main1" class="title-link">
+                Sound Design and Audio Integration
+                <span class="tooltip-title">
+                    Hey, good to see you here. I'm Sergi
+                    <br>
+                    — I design sounds and implement audio systems for games.
+                    <br>
+                    This page is a portfolio of some things I've done.
+                    <br>
+                    <br>
+                    Want to get in touch? Ask anything? Just chat? You can always email or DM me.
+                </span>
+            </a>
+        </div>
+
+        <!-- <div class="spacer" style="height: 1.8rem;"></div> -->
+
+        <!-- <div class="socials">
+            <span class="social-email">quietsergi@gmail</span> |
+            <a href="https://www.lunheimstudios.com/" target="_blank" class="socials-link">
+                Bluesky
+                <span class="tooltip-text">Open Bluesky</span>
+            </a>
+            |
+            <a href="https://www.lunheimstudios.com/" target="_blank" class="socials-link">
+                Twitter
+                <span class="tooltip-text">Open Twitter</span>
+            </a>
+            |
+            <a href="https://www.lunheimstudios.com/" target="_blank" class="socials-link">
+                Instagram
+                <span class="tooltip-text">Open Instagram</span>
+            </a>
+        </div> -->
+        <div class="spacer-line" style="height: 0rem;"></div>
+        <div class="socials">
+            <span class="social-email">quietsergi@gmail</span> |
+            <a href="#" onclick="navigator.clipboard.writeText('sergisabater'); 
+                this.querySelector('.tooltip-discord').textContent='copied!'; 
+                setTimeout(()=>this.querySelector('.tooltip-discord').textContent='copy Username',1500);"
+                class="socials-link">
+                Discord
+                <span class="tooltip-discord">copy Username</span>
+            </a>
+            |
+            <a href="https://bsky.app/profile/sergisabater.bsky.social" target="_blank" class="socials-link">
+                Bluesky
+                <span class="tooltip-social">
+                    to Bluesky App
+                </span>
+            </a>
+            |
+            <a href="https://x.com/sergisabater_" target="_blank" class="socials-link">
+                Twitter
+                <span class="tooltip-social">
+                    to Twitter App
+                </span>
+            </a>
+            |
+            <a href="https://www.instagram.com/sergisabater/" target="_blank" class="socials-link">
+                Instagram
+                <span class="tooltip-social">
+                    to Instagram App
+                </span>
+            </a>
+        </div>
+
+
+    </div>
+    <div class="spacer-line" style="height: 0rem;"></div>
+
+    <div id="main-container" class="container-main">
+
+        <div class="content-status">
+            STATUS
+            <span class="status-indicator"></span>
+        </div>
+
+        <div class="content-status-text">
+            I'm currently <span class="highlighted-word">AVAILABLE</span> to take on new projects.
+            <!-- – Get in touch -->
+            <a href="#" onclick="navigator.clipboard.writeText('sergisabater'); 
+                this.querySelector('.tooltip-discord').textContent='copied!'; 
+                setTimeout(()=>this.querySelector('.tooltip-discord').textContent='copy Discord Username',1500);"
+                class="socials-link"
+                style="font-style: italic; text-decoration: underline;color: #333; font-size: 0.9rem; line-height: 1.5"
+                ;>
+                – Get in touch
+                <span class="tooltip-discord">copy Discord Username</span>
+            </a>
+        </div>
+
+        <div class="spacer" style="height: 1.8rem;"></div>
 
 
 
-
-                <div class="spacer"></div>
-
-
-
+        <div class="content-credits">
+            CREDITS
+        </div>
 
 
 
-
-                <!-- Título -->
-                <div class="content-header-title">
-                    <a href="#" id="link-main1" class="title-link">Sergi Sabater</a>
-                </div>
-
-                <!-- Subtítulo -->
-                <div class="content-header-subtitle">
-                    Sound designer specializing in videogames.
-                </div>
-
-                <div class="spacer" style="--height: 0.9rem;"></div>
-                <div class="social-icons">
-                    <!-- <a href="https://x.com/sergisabater_" target="_blank" class="discord-icon">
-                        <i class="fab fa-twitter"></i>
-                        <span class="tooltip-discord">Open Twitter</span>
-                    </a> -->
-                    <a href="https://bsky.app/profile/sergisabater.bsky.social" target="_blank" class="discord-icon">
-                        <i class="fa-brands fa-bluesky"></i>
-                        <span class="tooltip-discord">Open Bluesky</span>
+        <div class="responsive-table">
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
+                        style="background-color: #ffff0000; border: 1px solid var(--green-color); color: var(--green-color); ">IN
+                        DEV</span></div>
+                <div class="table-cell col2">
+                    <a href="https://www.lunheimstudios.com/" target="_blank" id="special-title" class="game-title">
+                        tba
+                        <span class="tooltip-game">
+                            (to be announced)
+                            <br>
+                            <br>
+                            Credits: Sound Design / Audio Implementation
+                            <br>
+                            Software: Unity / FMOD
+                            <br>
+                            Studio: Lunheim Studios
+                        </span>
                     </a>
-                    <a href="#"
-                        onclick="navigator.clipboard.writeText('sergisabater'); 
-                this.querySelector('.tooltip-discord').textContent='Copied!'; 
-                setTimeout(()=>this.querySelector('.tooltip-discord').textContent='Click to copy my Discord username @sergisabater',1500);"
-                        class="discord-icon">
-                        <i class="fab fa-discord"></i>
-                        <span class="tooltip-discord">Click to copy my Discord username @sergisabater</span>
-                    </a>
-
                 </div>
+                <div class="table-cell col3">~ 2026</div>
+            </div>
 
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
+                        style="background-color: #ffff0000; border: 1px solid var(--green-color); color: var(--green-color); ">IN
+                        DEV</span></div>
+                <div class="table-cell col2">
+                    <a href="https://le-slo.itch.io/" target="_blank" id="special-title" class="game-title">
+                        tba
+                        <span class="tooltip-game">
+                            (to be announced)
+                            <br>
+                            <br>
+                            Credits: Sound Design / Audio Implementation
+                            <br>
+                            Software: Godot
+                            <br>
+                            Studio: Le Slo / taletronic
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">~ 2026</div>
+            </div>
 
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
+                        style="background-color: #333; border: 1px solid #ffffff; border-radius: 2px; color: #ffffff;">VERTICAL</span>
+                </div>
+                <div class="table-cell col2">
+                    <a href="https://zartbitter-games.itch.io/kerogen" target="_blank" class="game-title">
+                        kerogen
+                        <span class="tooltip-game">
+                            Credits: Additional Sound Design
+                            <br>
+                            Studio: Zartbitter Games
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">2025</div>
+            </div>
 
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word">RELEASED</span></div>
+                <div class="table-cell col2">
+                    <a href="https://store.steampowered.com/app/2581950/Tiny_Aquarium_Social_Fishkeeping/"
+                        target="_blank" class="game-title">
+                        tiny aquarium
+                        <span class="tooltip-game">
+                            Credits: Sound Design / Audio Implementation
+                            <br>
+                            Software: Unity / FMOD
+                            <br>
+                            Studio: Lunheim Studios
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">2025</div>
+            </div>
 
-
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
+                        style="background-color: #ffffff00;border: 1px solid #B22222; border-radius: 2px; color: #B22222;">CANCELLED</span>
+                </div>
+                <div class="table-cell col2">
+                    <a href="#" id="canceled-title" class="game-title">
+                        inefable
+                        <span class="tooltip-game">
+                            (despite being an awesome idea, it was cancelled due to its commercial viability)
+                            <br>
+                            <br>
+                            Credits: Sound Design / Audio Implementation
+                            <br>
+                            Software: Unity / FMOD
+                            <br>
+                            Studio: Le Slo / taletronic
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">2024</div>
             </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="spacer" style="height: 2rem;"></div>
-
-
-
-
-
-            <!-- Contenedor para Legal -->
-            <div id="legal-text" style="display:none; text-align:center; margin:2rem;">
-                <div class="spacer-line" style="height: 1rem;"></div>
-                <h1>Impressum</h3>
-                    <div class="spacer" style="height: 1rem;"></div>
-                    <h3>Angaben gemäß § 5 TMG:</h3>
-                    <p>Sergi Sabater Bote<br>
-                        Gerberstraße, 7<br>
-                        67098 Bad Dürkheim / Germany
-                    </p>
-
-                    <h3>Kontakt:</h3>
-                    <p>quietsergi[at]gmail.com<br>+34 607 906791</p>
-
-                    <h3>Berufsbezeichnung:</h3>
-                    <p>Freelancer im Bereich Sounddesign für Videospiele.</p>
-
-                    <h3>VAT Nummer:</h3>
-                    <p>DE452851201<br>
-                        (Hinweis gemäß § 19 UStG:
-                        Als Kleinunternehmer im Sinne des § 19 UStG wird keine Umsatzsteuer berechnet.)
-                    </p>
-
-                    <h3>Liability Notice:</h3>
-                    <p>Although I take the greatest care to verify the material presented on this website, I make no
-                        claims or warranties, express or implied, that any of the content provided at this website is
-                        free of errors or omissions, is consistent with industry standards, or that it will meet the
-                        specific application stated or implied.</p>
-
-                    <div class="spacer" style="height: 2.rem;"></div>
-                    <button id="legal-return"
-                        style="margin-top:1rem; padding:0.5rem 1rem; cursor:pointer;">Return</button>
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word">RELEASED</span></div>
+                <div class="table-cell col2">
+                    <a href="https://store.steampowered.com/app/1876000/IFO/" target="_blank" class="game-title">
+                        i.f.o
+                        <span class="tooltip-game">
+                            Credits: Sound Design / Audio Implementation / Composer
+                            <br>
+                            Software: Unity / FMOD
+                            <br>
+                            Studio: Le Slo / taletronic
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">2022</div>
             </div>
 
+            <!-- <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word">JAM</span></div>
+                <div class="table-cell col2">
+                    <a href="#" class="game-title">
+                        marzanna
+                        <span class="tooltip-game">
+                            Credits: Sound Design / Audio Implementation
+                            <br>
+                            Software: Unity / FMOD                       
+                            <br>
+                            Studio: Le Slo / taletronic
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">2025</div>
+            </div> -->
 
-
-            <div class="content-header-welcome">
-                Hello, good to see you here!
-                I'm Sergi — I design sounds and implement audio systems for games.
-                <br>
-                This page is a portfolio of some things I've done.
-                <br>
-                Want to get in touch? Ask anything? Just chat? You can
-                always email or DM me.
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word">RELEASED</span></div>
+                <div class="table-cell col2">
+                    <a href="https://store.steampowered.com/app/1115870/Inner_Tao/" target="_blank" class="game-title">
+                        inner tao
+                        <span class="tooltip-game">
+                            Credits: Sound Design / Composer
+                            <br>
+                            Software: GameMaker Studio 2
+                            <br>
+                            Studio: Le Slo
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">2021</div>
             </div>
-        </header>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="spacer"></div>
-        <div class="spacer-line"></div>
-
-
-
-
-
-
-
-        <div class="content-header-credits">
-            <h3>GAME CREDITS</h3>
-        </div>
-        <div class="content-header-commentary">
-            Lovely projects with amazing people I had the pleasure to work with!
         </div>
 
+        <div class="spacer" style="height: 1.8rem;"></div>
+
+        <div class="content-demo">
+            DEMOS
+        </div>
 
 
+        <div class="demoreels">
 
+            <!-- REEL!
+            <div class="demoreel-item reel">
+            <a href="#" data-video="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                <img src="thumbnail/thumb_outsidetheblocks.jpg">
+                <span class="tooltip-video">
+                (click to listen)
+                <br>
+                Sound Redesign
+                <br>
+                Studio: Lunheim
+                </span>
+            </a>
+            </div> -->
 
-
-
-        <div class="spacer" style="--height: 0.9rem;"></div>
-
-
-
-
-
-
-
-
-
-
-        <!-- Botón para el primer grupo 0-->
-        <button class="toggle-button" data-group="grupo0">
-            <span class="symbol">+</span> <span class="text"> See</span> Credits
-        </button>
-
-
-        <div class="project-content grupo0">
-            <div class="spacer" style="--height: 1px;"></div>
-
-            <div class="project">
-                <span class="date"> ~ 2026</span>—
-                <a href="https://www.lunheimstudios.com/" target="_blank" class="game-title">
-                    <span style="color: #49824f; font-size: 0.9rem;">Game: (Not Announced)</span>
-                    <span class="tooltip-text">In development. A game by: Lunheim Studio</span>
+            <!-- <div class="demoreel-item">
+                <a href="#" data-video="https://www.youtube.com/embed/iFm08HOOFsQ?autoplay=0">
+                    <img src="thumbnail/thumb_reel.jpg">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Michał Kubas
+                    </span>
                 </a>
-                <br>
-                <span class="role">Credits: Sound Designer, Audio Implementation</span>
-            </div>
-        </div>
+            </div> -->
 
-        <div class="project-content grupo0">
-            <div class=" project">
-                <span class="date"> ~ 2026</span>—
-                <a href="https://le-slo.itch.io/" target="_blank" class="game-title">
-                    <span style="color: #49824f; font-size: 0.9em;">Game: (Not Announced)</span>
-                    <span class="tooltip-text">In development. A game by: Le Slo & taletronic</span>
+
+            <div class="demoreel-item">
+                <a href="#" data-video="https://www.youtube.com/embed/iFm08HOOFsQ?autoplay=0">
+                    <img src="thumbnail/thumb_outsideblocks.jpg" style="object-position:bottom;">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Michał Kubas
+                    </span>
                 </a>
-                <br>
-                <span class="role">Credits: Sound Designer, Audio Implementation</span>
             </div>
-        </div>
 
-        <div class="project-content grupo0">
-            <div class=" project">
-                <span class="date"> 2025</span>—
-                <a href="https://zartbitter-games.itch.io/kerogen" target="_blank" class="game-title">
-                    Game: Kerogen
-                    <span class="tooltip-text">Game Demo by: Zartbitter Games</span>
+            <div class="demoreel-item">
+                <a href="#" data-video="https://www.youtube.com/embed/I3E8yOAETu4?autoplay=0">
+                    <img src="thumbnail/thumb_rootbound.jpg" style="object-position:bottom;">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Brainlag Games
+                    </span>
                 </a>
-                <br>
-                <span class="role">Credits: Additional Sound Design</span>
             </div>
-        </div>
 
-        <div class="project-content grupo0">
-            <div class="project">
-                <span class="date"> 2025</span>—
-                <a href="https://store.steampowered.com/app/2581950/Tiny_Aquarium_Social_Fishkeeping/" target="_blank"
-                    class="game-title">
-                    Game: Tiny Aquarium
-                    <span class="tooltip-text">A game by: Lunheim Studio</span>
+            <div class="demoreel-item">
+                </a> <a href="#" data-video="https://www.youtube.com/embed/kR9yWPU6B4I?autoplay=0">
+                    <img src="thumbnail/thumb_mechbuilder.jpg" style="object-position:bottom;">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Don Pachi
+                    </span>
                 </a>
-                <br>
-                <span class="role">Credits: Sound Designer, Audio Implementation</span>
             </div>
-        </div>
 
-        <div class="project-content grupo0">
-            <div class="project">
-                <span class="date"> 2022</span>—
-                <a href="https://store.steampowered.com/app/1876000/IFO/" target="_blank" class="game-title">
-                    Game: I.F.O.
-                    <span class="tooltip-text">A game by: Le Slo & taletronic</span>
+            <div class="demoreel-item">
+                </a> <a href="#" data-video="https://www.youtube.com/embed/h_Q1gYHicTc?autoplay=0">
+                    <img src="thumbnail/thumb_kerogen.png" style="object-position:bottom;">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Design
+                        <br>
+                        Studio: Zartbitter Games
+                    </span>
                 </a>
-                <br>
-                <span class="role">Credits: Sound Designer, Audio Implementation</span>
             </div>
-        </div>
 
-        <div class="project-content grupo0">
-            <div class="project">
-                <span class="date"> 2022</span>—
-                <a href="https://le-slo.itch.io/marzanna" target="_blank" class="game-title">
-                    Game: Marzanna
-                    <span class="tooltip-text">A game by: Le Slo & taletronic</span>
+            </a>
+            <div class="demoreel-item">
+                <a href="#" data-video="https://www.youtube.com/embed/4C2ZhL9Doko?autoplay=0">
+                    <img src="thumbnail/thumb_restoration.jpg">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Parasol Corp
+                    </span>
                 </a>
-                <br>
-                <span class="role">Credits: Sound Designer, Audio Implementation</span>
             </div>
-        </div>
 
-        <div class="project-content grupo0">
-            <div class="project">
-                <span class="date"> 2021</span>—
-                <a href="https://store.steampowered.com/app/1115870/Inner_Tao/" target="_blank" class="game-title">
-                    Game: Inner Tao
-                    <span class="tooltip-text">A game by: Le Slo</span>
+            <div class="demoreel-item">
+                <a href="#" data-video="https://www.youtube.com/embed/R7N5zhD2Abo?autoplay=0">
+                    <img src="thumbnail\thumb_homegrown.jpg">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: ThinMatrix
+                    </span>
                 </a>
-                <br>
-                <span class="role">Credits: Sound Designer</span>
             </div>
-        </div>
 
-        <div class="project-content grupo0">
-            <div class="project">
-                <span class="date"> 2019-2022</span>—
-                <a href="https://le-slo.itch.io/" target="_blank" class="game-title">
-                    Games: Various Game Jams
-                    <span class="tooltip-text">With: Le Slo</span>
+            <div class="demoreel-item">
+                <a href="#" data-video="https://player.vimeo.com/video/928819896?autoplay=0">
+                    <img src="thumbnail\thumb_celestial1.jpg">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Shelly Alon
+                    </span>
                 </a>
-                <br>
-                <span class="role">Credits: Sound Designer</span>
             </div>
-        </div>
 
-
-
-
-
-
-
-
-        <div class="spacer-line"></div>
-
-
-
-
-
-
-
-
-
-
-        <div class="content-header-credits">
-            <h3>PRACTICES & EXPERIMENTS</h3>
-        </div>
-
-        <div class="content-header-commentary">
-            Sound experiments and practices I did for learning purposes or just for fun
-        </div>
-
-
-
-
-
-
-        <div class="spacer" style="--height: 0.9rem;"></div>
-
-
-
-
-
-
-
-        <!-- Botón para el primer grupo -->
-        <button class="toggle-button" data-group="grupo1">
-            <span class="symbol">+</span> <span class="text"> See</span> Demo Reels
-        </button>
-
-
-        <!-- Proyectos del grupo 1 -->
-        <div class="project-content grupo1">
-            <div class="spacer" style="--height: 1px;"></div>
-            <div class="project">
-                <span class="date"> Demo Reel</span>—
-                <a href="#" data-vimeo="https://player.vimeo.com/video/955975575?autoplay=0" class="game-title">Generic
-                    Sound Reel
-                    <span class="tooltip-text">Multiple games by: (see video description)</span></a>
-                <br>
+            <div class="demoreel-item">
+                <a href="#" data-video="https://player.vimeo.com/video/928819991?autoplay=0">
+                    <img src="thumbnail\thumb_celestial2.jpg">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Shelly Alon
+                    </span>
+                </a>
             </div>
-        </div>
-        <div class="project-content grupo1">
-            <div class="project">
-                <span class="date"> Demo Reel</span>—
-                <a href="#" data-vimeo="https://player.vimeo.com/video/920543305?autoplay=0" class="game-title">Deck 13
-                    Sound
-                    Reel
-                    <span class="tooltip-text">Games by: Deck 13 Interactive</span></a><br>
+
+            <div class="demoreel-item">
+                <a href="#" data-video="https://player.vimeo.com/video/945218792?autoplay=0">
+                    <img src="thumbnail\thumb_arcane.jpg" style="object-position:bottom;">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Fortiche
+                    </span>
+                </a>
+            </div>
+
+            <div class="demoreel-item">
+                </a> <a href="#" data-video="https://player.vimeo.com/video/952226228?autoplay=0">
+                    <img src="thumbnail\thumb_reveil.jpg">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Pixelsplit
+                    </span>
+                </a>
             </div>
 
 
-            <div class="spacer" style="--height: 0.9rem;"></div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- Botón para grupo 2 -->
-        <button class="toggle-button" data-group="grupo2"><span class="symbol">+</span> <span class="text"> See</span>
-            Sound Redesigns
-        </button>
-
-        <!-- Proyectos del grupo 2 -->
-        <div class="project-content grupo2">
-            <div class="spacer" style="--height: 1px;"></div>
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://www.youtube.com/embed/iFm08HOOFsQ?autoplay=0" class="game-title">Outside
-                    The
-                    Blocks
-                    <span class="tooltip-text">A game by: Michał Kubas </span></a>
-                <br>
+            <div class="demoreel-item">
+                <a href="#" data-video="https://player.vimeo.com/video/945219092?autoplay=0">
+                    <img src="thumbnail\thumb_tlou.jpg" style="object-position:top;">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Naughty Dog
+                    </span>
+                </a>
             </div>
-        </div>
 
-        <div class="project-content grupo2">
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://www.youtube.com/embed/kR9yWPU6B4I?autoplay=0" class="game-title">Mech
-                    Builder 3D
-                    <span class="tooltip-text">A game by: Don Pachi</span></a>
-                <br>
+            <div class="demoreel-item">
+                <a href="#" data-video="https://player.vimeo.com/video/945219135?autoplay=0">
+                    <img src="thumbnail\thumb_super.jpg" style="object-position:bottom;">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Nintendo
+                    </span>
+                </a>
             </div>
-        </div>
 
-        <div class="project-content grupo2">
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://www.youtube.com/embed/I3E8yOAETu4?autoplay=0"
-                    class="game-title">Rootbound
-                    <span class="tooltip-text">A game by: Brainlag Games</span></a>
-                <br>
+            <div class="demoreel-item">
+                <a href="#" data-video="https://player.vimeo.com/video/945219193?autoplay=0">
+                    <img src="thumbnail\thumb_dorfromantik.jpg">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Toukana Interactive
+                    </span>
+                </a>
             </div>
-        </div>
 
-        <div class="project-content grupo2">
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://www.youtube.com/embed/R7N5zhD2Abo?autoplay=0"
-                    class="game-title">Homegrown
-                    <span class="tooltip-text">A game by: Thin Matrix</span></a>
-                <br>
+            <div class="demoreel-item">
+                <a href="#" data-video="https://player.vimeo.com/video/945218774?autoplay=0">
+                    <img src="thumbnail\thumb_celeste.jpg">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Extremely OK Games
+                    </span>
+                </a>
             </div>
-        </div>
 
-        <div class="project-content grupo2">
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://player.vimeo.com/video/952226228?autoplay=0" class="game-title">Reveil
-                    <span class="tooltip-text">A game by: Pixelsplit</span></a>
-                <br>
+            <div class="demoreel-item">
+                <a href="#" data-video="https://player.vimeo.com/video/945218935?autoplay=0">
+                    <img src="thumbnail\thumb_abzu.jpg" style="object-position:top;">
+                    <span class="tooltip-video">
+                        (click to listen)
+                        <br>
+                        Sound Redesign
+                        <br>
+                        Studio: Giant Squid
+                    </span>
+                </a>
             </div>
+
+
         </div>
 
-        <div class="project-content grupo2">
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://player.vimeo.com/video/928819896?autoplay=0"
-                    class="game-title">Celestial
-                    Bodies. l
-                    <span class="tooltip-text">An animation by: Shelly Alon</span></a>
-                <br>
+        <div class="spacer" style="height: 1.8rem;"></div>
+
+        <div class="content-demo">
+            SOFTWARE
+        </div>
+
+
+        <div class="content-status-text">
+            <!-- I'm currently <span class="highlighted-word">AVAILABLE</span> to take on new projects. -->
+            <span class="highlighted-word" style="color: #228B22; border: 1px solid #228B22;">UNITY</span>
+            <!-- <span class="highlighted-word" style="color: #333; border: 1px solid #333;">UNREAL</span>
+            <span class="highlighted-word" style="color: #333; border: 1px solid #333;">GODOT</span> -->
+            <span class="highlighted-word" style="color: #228B22; border: 1px solid #228B22;">FMOD</span>
+            <!-- <span class="highlighted-word" style="color: #333; border: 1px solid #333;">WWISE</span> -->
+            <span class="highlighted-word" style="color: #228B22; border: 1px solid #228B22;">REAPER</span>
+            <br>
+            <span class="highlighted-word" style="color: #333; border: 1px solid #333;">UNREAL</span>
+            <span class="highlighted-word" style="color: #333; border: 1px solid #333;">GODOT</span>
+            <span class="highlighted-word" style="color: #333; border: 1px solid #333;">WWISE</span>
+
+        </div>
+
+
+        <div class="spacer" style="height: 1.8rem;"></div>
+
+
+        <!-- <div class="content-credits">
+            CREDITS (JAMS)
+        </div>
+
+
+
+        <div class="responsive-table">
+
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
+                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
+                <div class="table-cell col2">
+                    <a href="https://le-slo.itch.io/marzanna" target="_blank" class="game-title">
+                        marzanna
+                        <span class="tooltip-game">
+                            Credits: Sound Design / Audio Implementation
+                            <br>
+                            Software: Unity / FMOD
+                            <br>
+                            Studio: Le Slo / taletronic / rayones
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">2022</div>
             </div>
-        </div>
 
-        <div class="project-content grupo2">
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://player.vimeo.com/video/928819991?autoplay=0"
-                    class="game-title">Celestial
-                    Bodies.
-                    ll
-                    <span class="tooltip-text">An animation by: Shelly Alon</span></a>
-                <br>
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
+                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
+                <div class="table-cell col2">
+                    <a href="https://le-slo.itch.io/el-momento-exacto" target="_blank" class="game-title">
+                        el momento exacto
+                        <span class="tooltip-game">
+                            Credits: Sound Design / Composer
+                            <br>
+                            Software: GameMaker Studio 2
+                            <br>
+                            Studio: Le Slo
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">2021</div>
             </div>
-        </div>
 
-        <div class="project-content grupo2">
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://player.vimeo.com/video/945219135?autoplay=0" class="game-title">Super
-                    Smash Bros.
-                    Ultimate
-                    <span class="tooltip-text">A game by: Nintendo</span></a>
-                <br>
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
+                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
+                <div class="table-cell col2">
+                    <a href="https://le-slo.itch.io/ludopath" target="_blank" class="game-title">
+                        ludopath
+                        <span class="tooltip-game">
+                            Credits: Sound Design / Composer
+                            <br>
+                            Software: GameMaker Studio 2
+                            <br>
+                            Studio: Le Slo
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">2020</div>
             </div>
-        </div>
 
-        <div class="project-content grupo2">
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://player.vimeo.com/video/862654735?autoplay=0" class="game-title">Kinetic
-                    Bombardment
-                    <span class="tooltip-text">An VFX by: Florian Dury </span></a>
-                <br>
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
+                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
+                <div class="table-cell col2">
+                    <a href="https://le-slo.itch.io/add-to-odd" target="_blank" class="game-title">
+                        add to odd
+                        <span class="tooltip-game">
+                            Credits: Sound Design / Composer
+                            <br>
+                            Software: GameMaker Studio 2
+                            <br>
+                            Studio: Le Slo
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">2020</div>
             </div>
-        </div>
 
-        <div class="project-content grupo2">
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://player.vimeo.com/video/945218792?autoplay=0" class="game-title">Arcane
-                    <span class="tooltip-text">A show by: Fortiche</span></a>
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
+                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
+                <div class="table-cell col2">
+                    <a href="https://le-slo.itch.io/sol-compartido" target="_blank" class="game-title">
+                        sol compartido
+                        <span class="tooltip-game">
+                            Credits: Sound Design / Composer
+                            <br>
+                            Software: GameMaker Studio 2
+                            <br>
+                            Studio: Le Slo
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">2020</div>
             </div>
-        </div>
 
-        <div class="project-content grupo2">
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://player.vimeo.com/video/945219092?autoplay=0" class="game-title">The Last
-                    of Us
-                    Part. ll
-                    <span class="tooltip-text">A game by: Naughty Dog</span></a>
-                <br>
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
+                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
+                <div class="table-cell col2">
+                    <a href="https://le-slo.itch.io/monologue" target="_blank" class="game-title">
+                        monologue
+                        <span class="tooltip-game">
+                            Credits: Sound Design / Composer
+                            <br>
+                            Software: GameMaker Studio 2
+                            <br>
+                            Studio: Le Slo
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">2020</div>
             </div>
+
+            <div class="table-row">
+                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
+                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
+                <div class="table-cell col2">
+                    <a href="https://le-slo.itch.io/xryst-hal" target="_blank" class="game-title">
+                        Xryst - HAL
+                        <span class="tooltip-game">
+                            Credits: Sound Design / Composer
+                            <br>
+                            Software: GameMaker Studio 2
+                            <br>
+                            Studio: Le Slo
+                        </span>
+                    </a>
+                </div>
+                <div class="table-cell col3">2020</div>
+            </div> -->
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="demoreel-lightbox"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; justify-content:center; align-items:center; background: rgba(0,0,0,0.85); z-index:9999;">
+        <div id="demoreel-lightbox-content" style="position:relative; max-width:90%; max-height:90%;">
+            <span id="demoreel-lightbox-close"
+                style="position:absolute; top:10px; right:10px; cursor:pointer; font-size:28px; color:#333;">&times;</span>
+            <iframe id="demoreel-lightbox-iframe" width="800" height="450" src="" frameborder="0"
+                allowfullscreen></iframe>
         </div>
-
-        <div class="project-content grupo2">
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://player.vimeo.com/video/945218774?autoplay=0" class="game-title">Celeste
-                    <span class="tooltip-text">A game by: Extremely OK Games</span></a>
-                <br>
-            </div>
-        </div>
-
-        <div class="project-content grupo2">
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://player.vimeo.com/video/945219193?autoplay=0"
-                    class="game-title">Dorfromantik
-                    <span class="tooltip-text">A game by: Toukana Interactive</span></a>
-                <br>
-            </div>
-        </div>
-
-        <div class="project-content grupo2">
-            <div class="project">
-                <span class="date"> Sound Redesign</span>—
-                <a href="#" data-vimeo="https://player.vimeo.com/video/945218935?autoplay=0" class="game-title">Abzu
-                    <span class="tooltip-text">A game by: Giant Squid</span></a>
-                <br>
-            </div>
-        </div>
+    </div>
 
 
 
+    </div>
 
 
 
-        <div class="spacer-line"></div>
-        <div class="spacer" style="--height: 0.9rem;"></div>
-        <div class="spacer" style="--height: 0.9rem;"></div>
+    <div id="legal-container">
+        <!-- <div class="spacer-line" style="height: 1rem;"></div> -->
+        <h1>Impressum</h3>
+            <h3>Angaben gemäß § 5 TMG:</h3>
+            <p>Sergi Sabater Bote<br>
+                Prof. Otto Dill Straße, 3<br>
+                67098 Bad Dürkheim / Germany
+            </p>
+
+            <h3>Kontakt:</h3>
+            <p>quietsergi[at]gmail.com<br>+34 607 906791</p>
+
+            <h3>Berufsbezeichnung:</h3>
+            <p>Freelancer im Bereich Sounddesign für Videospiele.</p>
+
+            <h3>VAT Nummer:</h3>
+            <p>DE452851201<br>
+                (Hinweis gemäß § 19 UStG:
+                Als Kleinunternehmer im Sinne des § 19 UStG wird keine Umsatzsteuer berechnet.)
+            </p>
+
+            <h3>Liability Notice:</h3>
+            <p>Although I take the greatest care to verify the material presented on this website, I make no
+                claims or warranties, express or implied, that any of the content provided at this website is
+                free of errors or omissions, is consistent with industry standards, or that it will meet the
+                specific application stated or implied.</p>
     </div>
 
 
@@ -1521,26 +1530,10 @@
 
 
 
-    <!-- <footer>
-            <div class="footer-left">Legal</div>
-            <div class="footer-right">Updated on: 09/2025</div>
-            <div class="social-icons">
-                <a href="https://www.facebook.com" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.twitter.com" target="_blank">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://www.instagram.com" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-        </footer> -->
+
 
     <footer>
-
-        <div class="footer-left" id="legal-button">Legal</div>
-
+        <button id="toggle-legal">legal</button>
     </footer>
 
 
@@ -1583,13 +1576,6 @@
 
 
 
-    <div id="lightbox" style="display:none;">
-        <div id="lightbox-bg"></div>
-        <div id="lightbox-content">
-            <iframe id="vimeo-video" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            <button id="lightbox-close">✖</button>
-        </div>
-    </div>
 
 
 
@@ -1598,147 +1584,92 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- SCRIPT------------------------------------------------------------------------------------------------------------------------------------------------------------ -->
-
-
-
-
-
+    <!-- ===== JavaScript Section ===== -->
 
 
     <script>
-        const buttons = document.querySelectorAll('.toggle-button');
+        const toggleButton = document.getElementById("toggle-legal");
+        const mainContainer = document.getElementById("main-container");
+        const legalContainer = document.getElementById("legal-container");
 
-        buttons.forEach(button => {
-            const groupClass = button.getAttribute('data-group');
-            const symbol = button.querySelector('.symbol'); // seleccionamos solo el +/-
-            const text = button.querySelector('.text');     // para texto See/Hide
-
-            button.addEventListener('click', () => {
-                const projects = document.querySelectorAll(`.${groupClass}`);
-                const anyHidden = Array.from(projects).some(p => p.style.display === 'none' || p.style.display === '');
-
-                projects.forEach(project => {
-                    project.style.display = anyHidden ? 'block' : 'none';
-                });
-
-                // Cambiamos el símbolo
-                symbol.textContent = anyHidden ? '-' : '+';
-                text.textContent = anyHidden ? 'Hide' : 'See';
-
-                // Subrayamos el texto del botón
-                if (anyHidden) {
-                    button.classList.add('underline');
-                } else {
-                    button.classList.remove('underline');
-                }
-            });
+        toggleButton.addEventListener("click", () => {
+            if (getComputedStyle(mainContainer).display !== "none") {
+                // Oculta main y muestra legal
+                mainContainer.style.display = "none";
+                legalContainer.style.display = "block";
+                toggleButton.textContent = "home";
+            } else {
+                // Oculta legal y muestra main
+                mainContainer.style.display = "block";
+                legalContainer.style.display = "none";
+                toggleButton.textContent = "legal";
+            }
         });
+
     </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script>
+        // Para GIF
+        const colGIF = document.querySelectorAll('.header-img');
+        colGIF.forEach(cell => {
+            const tooltip = cell.querySelector('.tooltip-title');
+            cell.addEventListener('mousemove', e => {
+                tooltip.style.left = e.clientX + 10 + 'px';
+                tooltip.style.top = e.clientY + 10 + 'px';
+                tooltip.style.opacity = 1;
+            });
+            cell.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = 0;
+            });
+        });
+        // Para título
+        const colTitle = document.querySelectorAll('.title-link');
+        colTitle.forEach(cell => {
+            const tooltip = cell.querySelector('.tooltip-title');
+            cell.addEventListener('mousemove', e => {
+                tooltip.style.left = e.clientX + 10 + 'px';
+                tooltip.style.top = e.clientY + 10 + 'px';
+                tooltip.style.opacity = 1;
+            });
+            cell.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = 0;
+            });
+        });
+
+        // Para socials
+        const colSocials = document.querySelectorAll('.socials-link');
+        colSocials.forEach(cell => {
+            const tooltip = cell.querySelector('.tooltip-social');
+            cell.addEventListener('mousemove', e => {
+                tooltip.style.left = e.clientX + 10 + 'px';
+                tooltip.style.top = e.clientY + 10 + 'px';
+                tooltip.style.opacity = 1;
+            });
+            cell.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = 0;
+            });
+        });
+
+        // Para socials
+        const colDiscord = document.querySelectorAll('.socials-link');
+        colDiscord.forEach(cell => {
+            const tooltip = cell.querySelector('.tooltip-discord');
+            cell.addEventListener('mousemove', e => {
+                tooltip.style.left = e.clientX + 10 + 'px';
+                tooltip.style.top = e.clientY + 10 + 'px';
+                tooltip.style.opacity = 1;
+            });
+            cell.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = 0;
+            });
+        });
+
+
         // Para títulos de juegos
         const colGames = document.querySelectorAll('.game-title');
         colGames.forEach(cell => {
-            const tooltip = cell.querySelector('.tooltip-text');
+            const tooltip = cell.querySelector('.tooltip-game');
             cell.addEventListener('mousemove', e => {
                 tooltip.style.left = e.clientX + 10 + 'px';
                 tooltip.style.top = e.clientY + 10 + 'px';
@@ -1749,10 +1680,10 @@
             });
         });
 
-        // Para experiment games
-        const colExperimentGames = document.querySelectorAll('.col-experimentgame');
-        colExperimentGames.forEach(cell => {
-            const tooltip = cell.querySelector('.tooltip2-text');
+        // Para videos de juegos
+        const colVideo = document.querySelectorAll('.demoreel-item');
+        colVideo.forEach(cell => {
+            const tooltip = cell.querySelector('.tooltip-video');
             cell.addEventListener('mousemove', e => {
                 tooltip.style.left = e.clientX + 10 + 'px';
                 tooltip.style.top = e.clientY + 10 + 'px';
@@ -1762,20 +1693,22 @@
                 tooltip.style.opacity = 0;
             });
         });
+    </script>
 
-        // 🔹 Para el icono de Discord
-        const discordIcons = document.querySelectorAll('.discord-icon');
-        discordIcons.forEach(icon => {
-            const tooltip = icon.querySelector('.tooltip-discord');
-            icon.addEventListener('mousemove', e => {
-                tooltip.style.left = e.clientX + 10 + 'px';
-                tooltip.style.top = e.clientY + 10 + 'px';
-                tooltip.style.opacity = 1;
-            });
-            icon.addEventListener('mouseleave', () => {
-                tooltip.style.opacity = 0;
-            });
-        });
+
+
+    <script>
+        const indicator = document.querySelector('.status-indicator');
+
+        setInterval(() => {
+            // alterna entre visible e invisible
+            if (indicator.style.opacity === "0") {
+                indicator.style.opacity = "1";
+            } else {
+                indicator.style.opacity = "0";
+            }
+        }, 1000); // cada 1 segundo
+
     </script>
 
 
@@ -1789,202 +1722,37 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <script>
-        const links = document.querySelectorAll('.game-title');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxBg = document.getElementById('lightbox-bg');
-        const closeBtn = document.getElementById('lightbox-close');
-        const iframe = document.getElementById('vimeo-video');
+        const demoreelLinks = document.querySelectorAll('.demoreel-item a[data-video]');
+        const demoreelLightbox = document.getElementById('demoreel-lightbox');
+        const demoreelIframe = document.getElementById('demoreel-lightbox-iframe');
+        const demoreelClose = document.getElementById('demoreel-lightbox-close');
 
-        links.forEach(link => {
-            // Solo interceptamos enlaces que tengan data-vimeo o data-youtube
-            if (link.dataset.vimeo || link.dataset.youtube) {
-                link.addEventListener('click', e => {
-                    e.preventDefault(); // solo bloquea lightbox
-                    const videoUrl = link.dataset.vimeo || link.dataset.youtube;
-                    iframe.src = videoUrl.includes('vimeo')
-                        ? videoUrl + "?autoplay=1"
-                        : videoUrl.replace("watch?v=", "embed/") + "?autoplay=1"; // Para YouTube
-                    lightbox.style.display = 'flex';
-                });
-            }
-            // Los enlaces normales se abren normalmente
+        demoreelLinks.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault(); // prevenir enlace normal
+                const videoUrl = link.dataset.video;
+
+                if (videoUrl.includes('youtube')) {
+                    demoreelIframe.src = videoUrl.replace("watch?v=", "embed/") + "?autoplay=1";
+                } else if (videoUrl.includes('vimeo')) {
+                    demoreelIframe.src = videoUrl + "?autoplay=1";
+                }
+
+                demoreelLightbox.style.display = 'flex';
+            });
         });
 
-        const closeLightbox = () => {
-            lightbox.style.display = 'none';
-            iframe.src = ""; // detener video
+        const closeDemoreelLightbox = () => {
+            demoreelLightbox.style.display = 'none';
+            demoreelIframe.src = ""; // detener video
         };
 
-        lightboxBg.addEventListener('click', closeLightbox);
-        closeBtn.addEventListener('click', closeLightbox);
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script>
-        const legalButton = document.getElementById('legal-button');
-        const legalText = document.getElementById('legal-text');
-        const mainContainer = document.querySelector('.main-container');
-        const legalReturn = document.getElementById('legal-return');
-        const welcome = document.querySelector('.content-header-welcome');
-
-        // Guardamos el texto original del footer
-        const originalFooterText = legalButton.textContent;
-
-        legalButton.addEventListener('click', () => {
-            // Oculta todo excepto header y legal-text
-            Array.from(mainContainer.children).forEach(child => {
-                if (!child.querySelector('.content-header-header') && child.id !== 'legal-text') {
-                    child.style.display = 'none';
-                }
-            });
-
-            if (welcome) welcome.style.display = 'none';
-
-            // Oculta todos los proyectos también
-            document.querySelectorAll('.project-content').forEach(pc => {
-                pc.style.display = 'none';
-            });
-
-            // Muestra la sección Legal
-            legalText.style.display = 'block';
-
-            // Cambiamos el texto del footer a "Home"
-            legalButton.textContent = 'Home';
-        });
-
-        // Cuando se hace clic en Return
-        legalReturn.addEventListener('click', () => {
-            // Muestra de nuevo todos los hijos del contenedor excepto los proyectos (estos quedan cerrados)
-            Array.from(mainContainer.children).forEach(child => {
-                if (!child.classList.contains('project-content')) {
-                    child.style.display = 'block';
-                }
-            });
-
-            if (welcome) welcome.style.display = 'block';
-
-            // Oculta la sección Legal
-            legalText.style.display = 'none';
-
-            // Restauramos el texto original del footer
-            legalButton.textContent = originalFooterText;
-
-            // Aseguramos que todos los proyectos queden cerrados
-            document.querySelectorAll('.project-content').forEach(pc => {
-                pc.style.display = 'none';
-            });
-
-            // Restauramos todos los botones "See/Hide" a estado inicial
-            const toggleButtons = document.querySelectorAll('.toggle-button');
-            toggleButtons.forEach(button => {
-                const symbol = button.querySelector('.symbol');
-                const text = button.querySelector('.text');
-                symbol.textContent = '+';
-                text.textContent = 'See';
-                button.classList.remove('underline');
-            });
+        demoreelClose.addEventListener('click', closeDemoreelLightbox);
+        demoreelLightbox.addEventListener('click', e => {
+            if (e.target === demoreelLightbox) closeDemoreelLightbox();
         });
     </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </body>
