@@ -873,11 +873,13 @@
 
         <div class="content-status">
             STATUS
-            <span class="status-indicator"></span>
+            <!-- <span class="status-indicator"></span> -->
+            <span class="status-indicator" style="background-color: #af7f4c"></span>
         </div>
 
         <div class="content-status-text">
-            I'm currently <span class="highlighted-word">AVAILABLE</span> to take on new projects.
+            <!-- I'm currently <span class="highlighted-word">AVAILABLE</span> to take on new projects. -->
+            I'm currently <span class="highlighted-word" style="border: 1px solid #af7f4c; color: #af7f4c">UNAVAILABLE</span> to take on new projects.
             <!-- – Get in touch -->
             <a href="#" onclick="navigator.clipboard.writeText('sergisabater'); 
                 this.querySelector('.tooltip-discord').textContent='copied!'; 
