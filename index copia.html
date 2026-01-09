@@ -18,18 +18,15 @@
 
     <style>
         :root {
-            --green-color: #228B22;
+            --green-color: #879B6F;
             --row-border-color: #cccccc;
             --background-color: white;
         }
 
-        /* ===== CSS Section ===== */
         body {
             margin: 2rem auto;
-            /* mantiene centrado horizontalmente */
             max-width: 750px;
             padding: 0 0.8rem;
-            /* margen interno a los lados */
             background: var(--background-color);
             font-family: Arial, sans-serif;
             color: #333;
@@ -46,9 +43,7 @@
 
         a {
             color: #4a90e2;
-            /* color del link */
             text-decoration: none;
-            /* quita subrayado */
         }
 
 
@@ -81,18 +76,12 @@
 
         #toggle-legal {
             color: #5f5f5f96;
-            /* color del texto */
             background-color: #00000000;
             border: none;
-            /* quita el borde por defecto */
             padding: 10px 25px;
-            /* espacio dentro del botón */
             font-size: 0.8rem;
-            /* tamaño de fuente */
             font-weight: bold;
-            /* texto en negrita */
             cursor: pointer;
-            /* cursor cambia al pasar por encima */
             transition: transform 0.1s ease, color 0.3s ease;
             font-size: 1rem;
             line-height: 1.5;
@@ -113,7 +102,6 @@
         #legal-container {
             /* padding: 20px; */
             /* border: 0.4px solid #ccc; */
-            margin-top: 10px;
             padding-bottom: 10rem;
         }
 
@@ -121,48 +109,32 @@
 
         #legal-container {
             display: none;
-            /* Oculto al cargar */
         }
 
         h1 {
             font-family: Arial, sans-serif;
-            /* tipo de letra */
             font-size: 1.1rem;
-            /* tamaño del texto */
             font-weight: bold;
-            color: #333;
-            /* color del texto */
-            line-height: 1.5;
-            /* espacio entre líneas */
-            margin-bottom: 1rem;
-            /* espacio debajo del párrafo */
+            color: #333333ce; 
+            line-height: 5px;
+            margin-bottom: 40px;
         }
 
         h3 {
             font-family: Arial, sans-serif;
-            /* tipo de letra */
             font-size: 0.9rem;
-            /* tamaño del texto */
             font-weight: bold;
-            color: #333;
-            /* color del texto */
-            line-height: 1.5;
-            /* espacio entre líneas */
-            margin-bottom: 1rem;
-            /* espacio debajo del párrafo */
+            color: #333333b0; 
+            line-height: 5px;
+            margin-bottom: 0px;
         }
 
         p {
             font-family: Arial, sans-serif;
-            /* tipo de letra */
             font-size: 0.8rem;
-            /* tamaño del texto */
             color: #333;
-            /* color del texto */
             line-height: 1.5;
-            /* espacio entre líneas */
             margin-bottom: 1rem;
-            /* espacio debajo del párrafo */
         }
 
 
@@ -256,25 +228,23 @@
 
         .socials {
             display: flex;
-            justify-content: center;
+            justify-content: left;
             align-items: center;
             overflow: hidden;
             gap: 0.5rem;
 
-            padding: 1rem 0;
-            /* espacio extra arriba y abajo */
+            padding: 0.5rem 0;
 
             color: #5f5f5f;
             /* font-weight: bold; */
             font-size: 0.8rem;
+            color: #3333339c;
         }
 
         @media (max-width: 600px) {
             .socials {
                 flex-wrap: wrap;
-                /* permite que los links salten de línea */
                 justify-content: center;
-                /* opcional, asegura que queden centrados */
             }
         }
 
@@ -285,16 +255,23 @@
             cursor: url('icons/external-icon.png'), auto;
             /* transition: transform 0.1s ease, color 0.1s ease; */
             display: inline-block;
-            /* necesario para transform */
             transform-origin: right center;
-            /* el “eje” está en el borde izquierdo */
+
+            transition: color 0.3s ease;
+        }
+
+        .socials-link-2 {
+            cursor: url('icons/external-icon.png'), auto;
+            /* transition: transform 0.1s ease, color 0.1s ease; */
+            display: inline-block;
+            transform-origin: right center;
 
             transition: color 0.3s ease;
         }
 
 
         .socials-link:hover {
-            color: #228b22b1;
+            /* color: #228b22b1; */
             /* transform: rotate(3deg); */
             text-decoration: underline;
             text-underline-offset: 1px;
@@ -318,9 +295,7 @@
         .content-status {
             display: flex;
             align-items: center;
-            /* centra verticalmente texto y círculo */
             gap: 0.2rem;
-            /* espacio entre texto y LED */
             font-weight: bold;
             font-size: 0.8rem;
         }
@@ -331,18 +306,20 @@
             border-radius: 50%;
             background-color: #4caf50;
             transition: opacity 0.8s ease-in-out;
-            /* más suave */
             opacity: 1;
 
             position: relative;
-            /* visible por defecto */
             top: -3px;
         }
 
         .content-status-text {
-            font-size: 1rem;
-            line-height: 1.5;
-            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            font-size: 0.8rem;
+            margin-bottom: 3px;
+            color: #333333;
+            line-height: 1.1em;
         }
 
         .highlighted-word {
@@ -390,9 +367,7 @@
         .content-credits-2 {
             display: flex;
             align-items: center;
-            /* centra verticalmente texto y círculo */
             gap: 0.2rem;
-            /* espacio entre texto y LED */
             font-size: 1.3rem;
             margin-top: 20px;
             margin-bottom: 11px;
@@ -448,7 +423,6 @@
             display: flex;
             width: 100%;
             border-bottom: 1px solid var(--row-border-color);
-            /* borde entre filas */
 
         }
 
@@ -464,13 +438,10 @@
             text-overflow: ellipsis;
             display: flex;
             align-items: center;
-            /* centra verticalmente */
         }
 
-        /* Columna 1 - estilo destacado */
         .col1 {
             flex: 1 1 0;
-            /* ancho relativo 1 */
             color: #555;
             font-size: 0.8rem;
         }
@@ -484,9 +455,7 @@
             color: #f4f4f9;
             font-size: 0.5rem;
             line-height: 0.75rem;
-            /* igual al font-size */
             vertical-align: middle;
-            /* fuerza centrado vertical dentro de la línea */
             text-align: center;
             width: max-content;
             letter-spacing: .06rem;
@@ -495,7 +464,6 @@
             display: inline;
         }
 
-        /* Columna 2 - texto normal */
         .col2 {
             flex: 8.5 1 0;
             /* ancho relativo 8 → ocupa ~80% */
@@ -504,7 +472,6 @@
             font-variant: small-caps;
         }
 
-        /* Columna 3 - otro estilo */
         .col3 {
             /* font-family: 'OffBit', sans-serif; */
             flex: 1 1 0;
@@ -521,14 +488,12 @@
                 display: none;
             }
 
-            /* Que las demás columnas ocupen todo el espacio disponible */
             .table-row .col2 {
                 flex: 1 1 auto;
             }
 
             .table-row .col3 {
                 flex: 0 0 auto;
-                /* si quieres que mantenga tamaño proporcional al texto */
             }
         }
 
@@ -589,9 +554,7 @@
         .content-demo {
             display: flex;
             align-items: center;
-            /* centra verticalmente texto y círculo */
             gap: 0.2rem;
-            /* espacio entre texto y LED */
             font-weight: bold;
             font-size: 0.8rem;
             margin-bottom: 4px;
@@ -602,7 +565,6 @@
             flex-direction: row;
             flex-wrap: wrap;
             grid-template-columns: repeat(auto-fill, 150px);
-            /* ancho fijo */
             gap: 4px;
             padding: 0;
             align-items: flex-end;
@@ -614,7 +576,6 @@
             overflow: hidden;
             border: 1px solid var(--row-border-color);
             box-sizing: border-box;
-            /* hace que el borde no aumente el tamaño del contenedor */
         }
 
         .demoreel-item.reel {
@@ -629,9 +590,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            /* recorta y mantiene proporción */
             object-position: center;
-            /* centra la imagen */
             display: block;
         }
 
@@ -662,29 +621,23 @@
 
         .spacer-line {
             width: 100%;
-            /* ocupa todo el ancho */
             border-bottom: 1px solid #ccc;
-            /* línea gris */
             margin: 1rem 0;
-            /* espacio arriba y abajo */
+
         }
 
         .socials .tooltip-text {
             position: fixed;
-            /* Igual que los otros tooltips */
             background-color: #49824fbe;
-            /* Color oficial de Discord */
             color: white;
             padding: 4px 12px;
             border-radius: 4px;
             font-size: 0.75rem;
             pointer-events: none;
-            /* No bloquea el hover */
             opacity: 0;
             transition: opacity 0.2s;
             z-index: 1000;
             white-space: nowrap;
-            /* Para que no se corte el texto */
         }
 
         .tooltip-title {
@@ -800,8 +753,6 @@
 </head>
 
 <body>
-    <!-- ===== HTML Section ===== -->
-
     <div class="container-header">
 
 
@@ -830,35 +781,14 @@
             </a>
         </div>
 
-        <!-- Subtítulo -->
+
         <div class="content-header-subtitle">
-            <a href="#" id="link-main1" class="title-link">
-                Freelance Sound Designer and Audio Programming
+            <a class="title-link">
+                Freelance Sound Designer and Audio Programmer
             </a>
         </div>
 
-        <!-- <div class="spacer" style="height: 1.8rem;"></div> -->
-
-        <!-- <div class="socials">
-            <span class="social-email">quietsergi@gmail</span> |
-            <a href="https://www.lunheimstudios.com/" target="_blank" class="socials-link">
-                Bluesky
-                <span class="tooltip-text">Open Bluesky</span>
-            </a>
-            |
-            <a href="https://www.lunheimstudios.com/" target="_blank" class="socials-link">
-                Twitter
-                <span class="tooltip-text">Open Twitter</span>
-            </a>
-            |
-            <a href="https://www.lunheimstudios.com/" target="_blank" class="socials-link">
-                Instagram
-                <span class="tooltip-text">Open Instagram</span>
-            </a>
-        </div> -->
-        <!-- <div class="spacer-line" style="height: 0rem;"></div>
         <div class="socials">
-            <span class="social-email">quietsergi@gmail</span> |
             <a href="#" onclick="navigator.clipboard.writeText('sergisabater'); 
                 this.querySelector('.tooltip-discord').textContent='copied!'; 
                 setTimeout(()=>this.querySelector('.tooltip-discord').textContent='copy Username',1500);"
@@ -887,10 +817,18 @@
                     to Instagram App
                 </span>
             </a>
+            |
+            <a href="#" 
+                style="color: #3333339c;" 
+                onclick="navigator.clipboard.writeText('quietsergi@gmail.com'); 
+                this.querySelector('.tooltip-discord').textContent='copied!'; 
+                setTimeout(()=>this.querySelector('.tooltip-discord').textContent='copy Username',1500);"
+                class="socials-link">
+                quietsergi@gmail.com
+                <span class="tooltip-discord">copy Email</span>
+            </a>
         </div>
 
-
-    </div> -->
     <div class="spacer-line" style="height: 0rem;"></div>
 
     <div id="main-container" class="container-main">
@@ -905,31 +843,37 @@
 
         <div class="content-credit">
             <a 
-                href="https://tulink.com" class="credit-link">'Lootlands', Lunheim Studio 
+                href="https://store.steampowered.com/app/3397910/Lootlands_Idle_ARPG/" target="_blank" class="credit-link">'Lootlands', Lunheim Studio 
                 <!-- <span class="tooltip-game">
                     (developed with: Unity & FMOD)
                 </span> -->
             </a>
-            (Sound Designer, Audio Programming 2025)
+            (Sound Designer, Audio Programming 2026)
             
         </div>
         <div class="content-credit">
             <a 
-                href="https://tulink.com" class="credit-link">'Silberheim', Beyond Worlds
+                href="https://silberheim.com/" target="_blank" class="credit-link">'Silberheim', Beyond Worlds
             </a>
-            (Sound Designer 2025)
+            (Sound Designer 2026)
         </div>
         <div class="content-credit">
             <a 
-                href="https://tulink.com" class="credit-link-unavailable">'Bumpers & Dragons', Lunheim Studio
+                href="https://www.lunheimstudios.com/" class="credit-link-unavailable">'Bumpers & Dragons', Lunheim Studio
             </a>
-            (Sound Designer, Audio Programming 2025)
+            (Sound Designer, Audio Programming 2026)
         </div>
         <div class="content-credit">
             <a 
-                href="https://tulink.com" class="credit-link-unavailable">'Trooops!', Le Slo & taletronic
+                href="https://le-slo.itch.io/" class="credit-link-unavailable">'Trooops!', Le Slo & taletronic
             </a>
-            (Sound Designer, Audio Programming 2025)
+            (Sound Designer, Audio Programming 2026)
+        </div>
+        <div class="content-credit">
+            <a 
+                href="https://zartbitter-games.itch.io/kerogen" target="_blank" class="credit-link">'Kerogen', Zartbitter Games
+            </a>
+            (Additional Sound Design 2026)
         </div>
 
 
@@ -938,56 +882,48 @@
         </div>
 
         <div class="content-credit">
-            <a href="https://tulink.com" class="credit-link">'Tiny Aquarium', Lunheim Studio </a>
+            <a href="https://store.steampowered.com/app/2581950/Tiny_Aquarium_Social_Fishkeeping/" target="_blank" class="credit-link">'Tiny Aquarium', Lunheim Studio </a>
             (Sound Designer, Audio Programming 2024)
         </div>
         <div class="content-credit">
-            <a href="https://tulink.com" class="credit-link">'i.f.o.', Le Slo & taletronic </a>
+            <a href="https://store.steampowered.com/app/1876000/IFO/" target="_blank" class="credit-link">'i.f.o.', Le Slo & taletronic </a>
             (Sound Designer, Audio Programming 2022)
         </div>
         <div class="content-credit">
-            <a href="https://tulink.com" class="credit-link">'Marzanna', Le Slo & taletronic </a>
+            <a href="https://le-slo.itch.io/marzanna" target="_blank" class="credit-link">'Marzanna', Le Slo & taletronic </a>
             (Sound Designer, Audio Programming 2022)
         </div>
         <div class="content-credit">
-            <a href="https://tulink.com" class="credit-link">'Inner Tao', Le Slo </a>
+            <a href="https://store.steampowered.com/app/1115870/Inner_Tao/" target="_blank" class="credit-link">'Inner Tao', Le Slo </a>
             (Sound Designer, Audio Programming 2022)
         </div>
 
 
-        <!-- <div class="content-credits-2">
+        <div class="content-credits-2">
             cancelled
         </div>
         <div class="content-credit">
             <a 
-                href="https://tulink.com" class="credit-link-unavailable">'Inefable', Le Slo & taletronic 
+                href="https://le-slo.itch.io/" class="credit-link-unavailable">'Inefable', Le Slo & taletronic 
                 <span class="tooltip-game">
                     (despite being an awesome idea, it was cancelled due to its commercial viability)
                 </span>
             </a>
             (Sound Designer, Audio Programming 2023)
-        </div> -->
+        </div>
 
+        <div class="spacer" style="height: 3rem;"></div>
 
+        <div class="content-credits">
+            sound demos
+        </div>
 
-        
+        <div class="spacer" style="height: 1rem;"></div>
 
 
         <div class="demoreels">
 
-            <!-- REEL!
-            <div class="demoreel-item reel">
-            <a href="#" data-video="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                <img src="thumbnail/thumb_outsidetheblocks.jpg">
-                <span class="tooltip-video">
-                (click to listen)
-                <br>
-                Sound Redesign
-                <br>
-                Studio: Lunheim
-                </span>
-            </a>
-            </div> -->
+            
 
             <!-- <div class="demoreel-item">
                 <a href="#" data-video="https://www.youtube.com/embed/iFm08HOOFsQ?autoplay=0">
@@ -1003,7 +939,7 @@
             </div> -->
 
 
-            <!-- <div class="demoreel-item">
+            <div class="demoreel-item">
                 <a href="#" data-video="https://www.youtube.com/embed/iFm08HOOFsQ?autoplay=0">
                     <img src="thumbnail/thumb_outsideblocks.jpg" style="object-position:bottom;">
                     <span class="tooltip-video">
@@ -1198,164 +1134,40 @@
                         Studio: Giant Squid
                     </span>
                 </a>
-            </div> -->
+            </div>
 
 
         </div>
 
-        <div class="spacer" style="height: 1.8rem;"></div>
+        <div class="spacer" style="height: 3rem;"></div>
 
-
-
-
-        <div class="spacer" style="height: 1.8rem;"></div>
-
-
-        <!-- <div class="content-credits">
-            CREDITS (JAMS)
+        <div class="content-credits">
+            status
+            <!-- <span class="status-indicator"></span> -->
+            <span class="status-indicator" style="background-color: red"></span>
         </div>
 
-
-
-        <div class="responsive-table">
-
-            <div class="table-row">
-                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
-                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
-                <div class="table-cell col2">
-                    <a href="https://le-slo.itch.io/marzanna" target="_blank" class="game-title">
-                        marzanna
-                        <span class="tooltip-game">
-                            Credits: Sound Design / Audio Implementation
-                            <br>
-                            Software: Unity / FMOD
-                            <br>
-                            Studio: Le Slo / taletronic / rayones
-                        </span>
-                    </a>
-                </div>
-                <div class="table-cell col3">2022</div>
-            </div>
-
-            <div class="table-row">
-                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
-                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
-                <div class="table-cell col2">
-                    <a href="https://le-slo.itch.io/el-momento-exacto" target="_blank" class="game-title">
-                        el momento exacto
-                        <span class="tooltip-game">
-                            Credits: Sound Design / Composer
-                            <br>
-                            Software: GameMaker Studio 2
-                            <br>
-                            Studio: Le Slo
-                        </span>
-                    </a>
-                </div>
-                <div class="table-cell col3">2021</div>
-            </div>
-
-            <div class="table-row">
-                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
-                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
-                <div class="table-cell col2">
-                    <a href="https://le-slo.itch.io/ludopath" target="_blank" class="game-title">
-                        ludopath
-                        <span class="tooltip-game">
-                            Credits: Sound Design / Composer
-                            <br>
-                            Software: GameMaker Studio 2
-                            <br>
-                            Studio: Le Slo
-                        </span>
-                    </a>
-                </div>
-                <div class="table-cell col3">2020</div>
-            </div>
-
-            <div class="table-row">
-                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
-                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
-                <div class="table-cell col2">
-                    <a href="https://le-slo.itch.io/add-to-odd" target="_blank" class="game-title">
-                        add to odd
-                        <span class="tooltip-game">
-                            Credits: Sound Design / Composer
-                            <br>
-                            Software: GameMaker Studio 2
-                            <br>
-                            Studio: Le Slo
-                        </span>
-                    </a>
-                </div>
-                <div class="table-cell col3">2020</div>
-            </div>
-
-            <div class="table-row">
-                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
-                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
-                <div class="table-cell col2">
-                    <a href="https://le-slo.itch.io/sol-compartido" target="_blank" class="game-title">
-                        sol compartido
-                        <span class="tooltip-game">
-                            Credits: Sound Design / Composer
-                            <br>
-                            Software: GameMaker Studio 2
-                            <br>
-                            Studio: Le Slo
-                        </span>
-                    </a>
-                </div>
-                <div class="table-cell col3">2020</div>
-            </div>
-
-            <div class="table-row">
-                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
-                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
-                <div class="table-cell col2">
-                    <a href="https://le-slo.itch.io/monologue" target="_blank" class="game-title">
-                        monologue
-                        <span class="tooltip-game">
-                            Credits: Sound Design / Composer
-                            <br>
-                            Software: GameMaker Studio 2
-                            <br>
-                            Studio: Le Slo
-                        </span>
-                    </a>
-                </div>
-                <div class="table-cell col3">2020</div>
-            </div>
-
-            <div class="table-row">
-                <div class="table-cell col1 hide-on-mobile"><span class="col1-word"
-                        style="background-color: #ffff0000; border: 1px solid #333; color: #333; ">JAM</span></div>
-                <div class="table-cell col2">
-                    <a href="https://le-slo.itch.io/xryst-hal" target="_blank" class="game-title">
-                        Xryst - HAL
-                        <span class="tooltip-game">
-                            Credits: Sound Design / Composer
-                            <br>
-                            Software: GameMaker Studio 2
-                            <br>
-                            Studio: Le Slo
-                        </span>
-                    </a>
-                </div>
-                <div class="table-cell col3">2020</div>
-            </div> -->
-
-
+        <div class="spacer" style="height: 0.5rem;"></div>
+    
+        <div class="content-status-text">
+            <!-- I'm currently <span class="highlighted-word">AVAILABLE</span> to take on new projects. -->
+            <!-- I'm currently <span class="highlighted-word" style="border: 1px solid #af7f4c; color: #af7f4c">UNAVAILABLE</span> to take on new projects. -->
+            I'm currently very busy with multiple projects, but I would still love to hear from you!
+            <!-- I'm currently <span class="highlighted-word" style="border: 1px solid #af7f4c; color: #af7f4c">BUSY</span> with multiple projects, but I would still love to hear from you! -->
+            <!-- – Get in touch -->
+            <a onclick="navigator.clipboard.writeText('sergisabater'); 
+                this.querySelector('.tooltip-discord').textContent='copied!'; 
+                setTimeout(()=>this.querySelector('.tooltip-discord').textContent='copy Discord username',1500);"
+                class="socials-link"
+                style="font-style: italic; text-decoration: underline;color: #333; line-height: 1.5"
+                ;>
+                – Get in touch!
+                <span class="tooltip-discord">copy Discord username</span>
+            </a>
+        </div>
 
 
     </div>
-
-
-
-
-
-
-
 
 
 
