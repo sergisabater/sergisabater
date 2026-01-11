@@ -778,6 +778,7 @@
 
 <body>
     <div class="container-header">
+        <audio id="hoverSound" src="sounds/hover.mp3" preload="auto"></audio>
 
 
         <div class="header-img">
@@ -1488,6 +1489,18 @@
         demoreelClose.addEventListener('click', closeDemoreelLightbox);
         demoreelLightbox.addEventListener('click', e => {
             if (e.target === demoreelLightbox) closeDemoreelLightbox();
+        });
+    </script>
+
+    <script>
+        const sound = document.getElementById("hoverSound");
+        sound.volume = 0.5;
+    
+        document.querySelectorAll(".demoreel-item").forEach(item => {
+        item.addEventListener("mouseenter", () => {
+            sound.currentTime = 0;
+            sound.play().catch(() => {});
+        });
         });
     </script>
 
